@@ -5,8 +5,8 @@
 
 import { useState,ReactElement }  from 'react';
 
-const useMultiForm = (formSteps: ReactElement[] ) => {
-    const [currentIndex, setCurrentIndex] = useState(1);
+const useMultiForm = (formSteps: number) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
     
     const goBackwards = () => {
         if (currentIndex === 0) return;
@@ -15,17 +15,16 @@ const useMultiForm = (formSteps: ReactElement[] ) => {
 
     // go to section
     const goForwards = () => {
-        if (currentIndex === formSteps.length - 1) return;
+        if (currentIndex === formSteps -1) return;
         setCurrentIndex((prev) => prev + 1);
       };
   return {
-    formSteps,
+
     currentIndex,
-    currentStep: formSteps[currentIndex],
     goForwards,
     goBackwards,
     isFirstStep: currentIndex == 0,
-    isLastStep: currentIndex ==formSteps.length -1,
+    isLastStep: currentIndex == formSteps -1,
 
   };
 
