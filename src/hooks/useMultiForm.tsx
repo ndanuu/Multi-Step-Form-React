@@ -13,7 +13,7 @@ const useMultiForm = (formSteps: number) => {
         setCurrentIndex((prev) => prev - 1);
       };
 
-    // go to section
+  
     const goForwards = () => {
         if (currentIndex === formSteps -1) return;
         setCurrentIndex((prev) => prev + 1);
