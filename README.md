@@ -5,8 +5,6 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ## Overview
 
 ### My Progress
-
-Users are be able to:
 Created React Components that allow the user to:
 Fill in the Personal Info Form and Submit (Next Step)
 Go to Select Your Plan page and Select a plan
