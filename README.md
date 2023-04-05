@@ -23,13 +23,11 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ### My Progress
 
 Users are be able to:
-Fill in the Personal Info Form
-Submit (Next Step)
-Go to Select Your Plan page
-Select a plan
+Created React Components that allow the user to:
+Fill in the Personal Info Form and Submit (Next Step)
+Go to Select Your Plan page and Select a plan
 Can go back to the Previous page or Submit(Confirm)
-Go to Pick Add Ons
-Pick Add Ons and Submit
+Go to Pick Add Ons and Pick Add Ons and Submit
 
 
 
@@ -47,6 +45,7 @@ To get a local copy up and running follow these simple example steps.
 4.Clone the Repo    (git clone) https://github.com/ndanuu/Multi-Step-Form-React.git
 5.Run npm Install (To Install the Packages)
 6.Run npm i --save-dev typescript to install typescript
+8.Cd into the folder multi-step-form-react
 7.Run npm run dev (to see the project on browser)
 
 
@@ -90,9 +89,8 @@ This is what I am working on to complete this project:
 
 1.Complete Step 4 (Finishing Up)
 2.Style with CSS
-3.Work on User Functionality where the user is able to:
-4.Form Validation
-5.Integrate API
+3.Work on User Functionality where the user is able to:Form Validation
+4.Integrate API
 
 
 ### Useful resources
