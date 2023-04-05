@@ -2,22 +2,6 @@
 
 This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
 
-## Table of contents
-
-- [Overview](#overview)
-  - [My Progress](#my-progress)
-  - [Screenshot](#screenshot)
-  - [Getting Started](#Getting Started)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-
 ## Overview
 
 ### My Progress
