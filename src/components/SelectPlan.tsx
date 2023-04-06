@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { FormItems } from "../App";
-
+import { planOptions } from '../App';
 type StepProps = Pick<FormItems, "plan" | "planLength"> & {
     updateForm: (item: Partial<FormItems>) => void;
 };
@@ -15,6 +15,12 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
         <div>
         <label htmlFor="Arcade">
             <p>Arcade</p>
+            <p>&
+              {!planLength ? planOptions.Arcade.monthly
+             : planOptions.Arcade.yearly}
+             /{!planLength ? "mo" : "yr"}
+            </p>
+
         
         </label>
         <input 
@@ -24,11 +30,15 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
         checked={plan === "Arcade"}
         onChange={(e) => updateForm({plan: "Arcade"})}       
          />
+         {planLength &&  <p>2 months Free</p>}
         </div>
 
          <div>
          <label htmlFor="advanced">
             <p>Advanced</p>
+            <p>{!planLength ? planOptions.Advanced.monthly 
+            : planOptions.Advanced.yearly}
+            /{!planLength ? "mo" : "yr"}</p>
 
          </label>
          <input
@@ -43,6 +53,9 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
         <div >
         <label htmlFor="Pro">
             <p>Pro</p>
+            <p>{!planLength ? planOptions.Pro.monthly 
+            :planOptions.Pro.yearly}
+            /{!planLength ? "mo" : "yr"}</p>
 
          </label>
          <input 
@@ -55,18 +68,18 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
         </div>
         </div>
 
-<div >
-<label>
-<span>Monthly</span>
-         <input 
-         name='planLength'
-         type="checkbox"
-        //  onChange={(e) => updateForm()}
+        <div>
+        <label>
+          <span>Monthly</span>
+          <input
+            type="checkbox"
+            name="planLength"
+            checked={planLength}
+            onChange={(e) => updateForm({ planLength: e.target.checked })}
           />
           <span>Yearly</span>
-
-          </label>
-</div>
+        </label>
+      </div>
 </div>
   )
 }

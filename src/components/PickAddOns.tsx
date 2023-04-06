@@ -1,12 +1,13 @@
 import React from 'react'
 
 import { FormItems } from "../App";
+import { planOptions } from '../App';
 
-type StepProps = Pick<FormItems, "isOnlineService" | "isLargerStorage" | "isCustomizableProfile"> & {
+type StepProps = Pick<FormItems, "isOnlineService" | "isLargerStorage" | "isCustomizableProfile" | "planLength"> & {
   updateForm: (item: Partial<FormItems>) => void;
 };
 
-const PickAddOns = ({ isOnlineService, isLargerStorage, isCustomizableProfile,updateForm }: StepProps) => {
+const PickAddOns = ({ isOnlineService, isLargerStorage, isCustomizableProfile,planLength, updateForm }: StepProps) => {
   return (
     <div>
         <h2>Pick add-ons</h2>
@@ -24,7 +25,11 @@ const PickAddOns = ({ isOnlineService, isLargerStorage, isCustomizableProfile,up
                 <h3>Online service</h3>
                 <p>Access to multiplayer games </p>
             </div>
-            <p>+ $1/mo</p>
+            <p>+$
+            {!planLength ? 
+            planOptions.onlineServices.monthly 
+            :planOptions.onlineServices.yearly}
+            /{!planLength ? "mo" : "yr"}</p>
 
          </label>
         </div>
@@ -34,15 +39,18 @@ const PickAddOns = ({ isOnlineService, isLargerStorage, isCustomizableProfile,up
         name='isLargerStorage'
         type="checkbox"
         id='isLargerStorage'
-        // checked={isLargerStorage}
-        // onChange={(e) => updateForm({isLargerStorage: e.target.checked})}       
+        checked={isLargerStorage}
+        onChange={(e) => updateForm({isLargerStorage: e.target.checked})}       
          />
          <label htmlFor="isLargerStorage">
             <div>
                 <h3>Larger Storage</h3>
                 <p>Extra 1TB of cloud save </p>
             </div>
-            <p>+ $2/mo</p>
+            <p>+${!planLength 
+            ? planOptions.largerStorage.monthly
+            : planOptions.largerStorage.yearly}/
+            {!planLength ? "mo" : "yr"}</p>
 
          </label>
         </div>
@@ -52,15 +60,19 @@ const PickAddOns = ({ isOnlineService, isLargerStorage, isCustomizableProfile,up
         name='isCustomizableProfile'
         type="checkbox"
         id='isCustomizableProfile'
-        // checked={isCustomizableProfile}
-        // onChange={(e) => updateForm({isCustomizableProfile: e.target.checked})}       
+        checked={isCustomizableProfile}
+        onChange={(e) => updateForm({isCustomizableProfile: e.target.checked})}       
          />
          <label htmlFor="isCustomizableProfile">
             <div>
                 <h3>Customize Profile</h3>
                 <p>Custom theme on your profile </p>
             </div>
-            <p>+ $1/mo</p>
+            <p>+$
+              {!planLength 
+              ? planOptions.customizableProfile.monthly
+              :planOptions.customizableProfile.yearly}
+              /{!planLength ? "mo" : "yr"}</p>
 
          </label>
         </div>

@@ -15,6 +15,7 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
         <input 
         type="text"
         value={name}
+        required
         onChange={(e) => updateForm({name:e.target.value })}       
          id='name'
         name='name' autoFocus
@@ -29,6 +30,7 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
           id='email'
           name='email'
           value={email}
+          required
           onChange={(e) => updateForm({email:e.target.value })}       
           placeholder='e.g Lis@beth.com'
          />
@@ -38,6 +40,7 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
          type="text"
          placeholder='e.g +2541234567890'
          value={phone}
+         required
          onChange={(e) => updateForm({phone:e.target.value })}       
 
          
