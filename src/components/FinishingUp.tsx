@@ -16,9 +16,7 @@ const FinishingUp = ({
   isLargerStorage,
   isCustomizableProfile,
   }: StepProps) => {
-    //grab values for every true boolean
-    // add yearly/monthly plan value
-    // reduce to final value 
+  
 
     const plantotal = 
     !planLength 
