@@ -1,12 +1,13 @@
 import { FormEvent, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import styles from './App.module.css'
 import useMultiForm from './hooks/useMultiForm';
 import PersonalInfo from './components/PersonalInfo';
 import SelectPlan from './components/SelectPlan'
 import PickAddOns from './components/PickAddOns';
 import FinishingUp from './components/FinishingUp';
+import Button from './components/Button';
 
 
 export const planOptions = {
@@ -93,20 +94,26 @@ function App() {
 
   
     return (
-      <div className="App">
+      <div className={styles.app}>
 
-<div className="sidebar">
+<aside className={styles.sidebar}>
         {sideBar.map((item, index) => (
-          <div key={item}>
-            <div className="number">{index}</div>
-            <div>
-              <p>Step {index}</p>
-              <p>{item}</p>
+          <div key={item} className={styles.section}>
+            <div
+              className={`${styles.num} ${
+                currentIndex === index ? styles.active : ""
+              }`}
+            >
+              {index + 1}
+            </div>
+            <div className={styles.info}>
+              <p className={styles.stepNum}>Step {index}</p>
+              <p className={styles.step}>{item}</p>
             </div>
           </div>
         ))}
-      </div>
-      <form onSubmit={handleSubmit}>
+      </aside>
+      <form className={styles.form} onSubmit={handleSubmit}>
         {currentIndex === 0 && (
           <PersonalInfo {...formData} updateForm={updateForm} />
         )}
@@ -119,12 +126,21 @@ function App() {
         {currentIndex === 3 && (
           <FinishingUp {...formData} updateForm={updateForm} />
         )}
+
+        <div className="styles.steps">
         {!isFirstStep && (
-          <button type="button" onClick={goBackwards}>
-            Go back
-          </button>
+          <Button
+          style='back'
+          text='Go back'
+          type='button'
+          onClick={goBackwards}/>
         )}
-        <button type="submit">{isLastStep ? "Confirm" : "Next Step"}</button>
+        <Button
+            style={isLastStep ? "submit" : "default"}
+            text={isLastStep ? "Confirm" : "Next Step"}
+          />
+        </div>
+        
       </form>
         
   

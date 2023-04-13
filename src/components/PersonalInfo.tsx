@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { FormItems } from "../App";
+import styles from "./FormStep.module.css"
 
 type StepProps = Pick<FormItems, "email" | "name" | "phone"> & {
   updateForm: (item: Partial<FormItems>) => void;
@@ -8,9 +9,11 @@ type StepProps = Pick<FormItems, "email" | "name" | "phone"> & {
 
 const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
         <h2>Personal Info</h2>
-        <p>Please provide your name,email address, and phone number</p>
+        <p className='muted'>Please provide your name,email address, and phone number</p>
+        
+        <div className="gris-sm">
         <label htmlFor="name">Name</label>
         <input 
         type="text"
@@ -22,8 +25,10 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
         autoComplete='name'
         placeholder='e.g Lis Beth'
          />
-
-         <label htmlFor="email">Email Address</label>
+        </div>
+        
+          <div className="grid-sm">
+          <label htmlFor="email">Email Address</label>
          <input
           type="text" autoFocus
           autoComplete='email'
@@ -34,8 +39,10 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
           onChange={(e) => updateForm({email:e.target.value })}       
           placeholder='e.g Lis@beth.com'
          />
-
-         <label htmlFor="phone">Phone Number</label>
+          </div>
+         
+        <div className="grid-sm">
+        <label htmlFor="phone">Phone Number</label>
          <input 
          type="text"
          placeholder='e.g +2541234567890'
@@ -45,6 +52,8 @@ const PersonalInfo = ({ name, email, phone,updateForm }: StepProps) => {
 
          
          />
+        </div>
+         
 
     </div>
   )

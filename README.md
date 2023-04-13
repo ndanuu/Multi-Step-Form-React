@@ -29,10 +29,9 @@ To get a local copy up and running follow these simple example steps.
 2.Open the folder with Vs Code
 3.Open Vs Code Terminal
 4.Clone the Repo    (git clone) https://github.com/ndanuu/Multi-Step-Form-React.git
-5.Run npm Install (To Install the Packages)
-6.Run npm i --save-dev typescript to install typescript
-8.Cd into the folder multi-step-form-react
-7.Run npm run dev (to see the project on browser)
+6.Cd into the folder multi-step-form-react
+7.Run npm Install (To Install the Packages)
+8.Run npm run dev (to see the project on browser)
 
 
 ### Screenshot
