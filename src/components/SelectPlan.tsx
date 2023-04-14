@@ -2,8 +2,11 @@ import React from 'react'
 
 import { FormItems } from "../App";
 import { planOptions } from '../App';
+
+// styles
 import styles from "./FormStep.module.css";
 
+// icons
 import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
@@ -33,7 +36,8 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
              /{!planLength ? "mo" : "yr"}
             </p>
 
-        
+            {planLength &&  <p>2 months Free</p>}
+
         </label>
         <input 
         name='plan'
@@ -42,7 +46,6 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
         checked={plan === "Arcade"}
         onChange={(e) => updateForm({plan: "Arcade"})}       
          />
-         {planLength &&  <p>2 months Free</p>}
         </div>
 
          <div className={styles.radio}>
@@ -57,6 +60,7 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
             <p className='muted'>{!planLength ? planOptions.Advanced.monthly 
             : planOptions.Advanced.yearly}
             /{!planLength ? "mo" : "yr"}</p>
+            {planLength &&  <p>2 months Free</p>}
 
          </label>
          <input
@@ -80,6 +84,7 @@ const SelectPlan = ({plan, planLength, updateForm }: StepProps) => {
             <p className='muted'>{!planLength ? planOptions.Pro.monthly 
             :planOptions.Pro.yearly}
             /{!planLength ? "mo" : "yr"}</p>
+            {planLength &&  <p>2 months Free</p>}
 
          </label>
          <input 

@@ -7,6 +7,7 @@ import PersonalInfo from './components/PersonalInfo';
 import SelectPlan from './components/SelectPlan'
 import PickAddOns from './components/PickAddOns';
 import FinishingUp from './components/FinishingUp';
+import Confirmation from './components/Confirmation';
 import Button from './components/Button';
 
 
@@ -82,13 +83,14 @@ function App() {
       isFirstStep,
       isLastStep,
       goToSection,
-     } = useMultiForm(sideBar.length);
+      isConfirmation,
+     } = useMultiForm(sideBar.length +1);
 
      
   const handleSubmit = (e : FormEvent) => {
     e.preventDefault();
-    if(isLastStep)
-    return alert("congrats");
+    // if(isLastStep)
+    // return alert("congrats");
     goForwards();
   };
 
@@ -126,8 +128,10 @@ function App() {
         {currentIndex === 3 && (
           <FinishingUp {...formData} updateForm={updateForm} />
         )}
+        {currentIndex === 4 && <Confirmation/> }
 
-        <div className="styles.steps">
+
+        <div className={styles.steps} hidden={isConfirmation}>
         {!isFirstStep && (
           <Button
           style='back'

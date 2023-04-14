@@ -68,6 +68,7 @@ body {
   line-height: 1.5;
   font-weight: 500;
   background-color: hsl(var(--neutral3));
+  color: hsl(var(--dark));
 }
 
 /* headings */
@@ -149,6 +150,10 @@ opacity: 1;
 /* utils */
 .muted{
   color: hsl(var(--neutral5));
+}
+
+.accent{
+  color: hsl(var(--accent));
 }
 
 .grid-sm{

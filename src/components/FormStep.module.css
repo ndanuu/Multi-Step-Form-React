@@ -28,14 +28,15 @@
     border-color: hsl(var(--muted));
     background-color: hsl(var(--accent)/0.05);
   }
-  /* monthly and yearly toggle */
+  /* monthly and yearly toggle  */
+
   .toggle {
     display: grid;
     place-items:center;
     background-color: hsl(var(--accent)/0.05);
     border-radius: 0.6rem;
     padding: var(--space-s);
-  }
+  } 
 
   .toggle label{
     display: flex;
@@ -75,4 +76,101 @@
   .toggle input:checked + .fake-toggle::before {
     transform: translateX(142.5%);
   }
+
+  /* step 3 styling */
+  /* checkbox  */
+  .checkbox-wrapper{
+    background-color: hsl(var(--neutral1));
+    border: 2px solid hsl(var(--neutral4));
+    border-radius: 0.6rem;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: var(--space-s);
+    gap: var(--space-s);
+  }
+
+  .checkbox-wrapper [type="checkbox"]{
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    opacity: 0; 
+  }
+
+  .checkbox-wrapper:has([type="checkbox"]:checked) {
+    border-color: hsl(var(--accent));
+    background-color: hsl(var(--accent) / 0.05);
+  }
+  
+  .checkbox-label{
+    display: flex;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .label-group{
+    flex-shrink: 1 1 0%;
+    display: flex;
+    gap: var(--space-s);
+    align-items: center;
+    justify-content:space-between;
+    
+
+  }
+  .checkbox{
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 0.4rem;
+    background-color: hsl(var(--neutral1));
+    border: 2px solid hsl(var(--neutral4));
+    display: grid;
+    place-items: center;
+  }
+
+  [type="checkbox"]:checked + label .checkbox {
+    background-color: hsl(var(--accent));
+    border-color: hsl(var(--accent));
+  }
+
+  /* step 4 */
+   .chart{
+    background-color: hsl(var(--accent) / 0.05);
+    border-radius: 0.6rem;
+    display: grid;
+    padding-block: var(--space-xs);
+
+   }
+
+   .row{
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-s);
+    align-items: center;
+
+   }
+
+   .row:last-of-type{
+    padding-block: var(--space-2xs) 0;
+   }
+   
+   .change{
+    background-color: transparent;
+    border: none;
+    max-width: fit-content;
+    color: hsl(var(--neutral5));
+    font: inherit;
+    text-decoration: underline;
+   }
+
+   .line{
+    height: 1px;
+    background-color: hsl(var(--neutral4));
+    margin-inline: var(--space-s);
+   }
+
+  
+  
+
   
