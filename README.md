@@ -5,15 +5,14 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 ## Overview
 
 ### My Progress
-<<<<<<< HEAD
+-Mobile design is complete.
+### Users can:
+-Complete each step of the sequence
+-Go back to a previous step to update their selection.
+-See a summary of their selction on the "Finishing Up step".
+-Confirm their order on"The thank you step"
+-See hover.
 
-=======
->>>>>>> fc0728dd7222cf27789405ba333c9b8770c84cf4
-Created React Components that allow the user to:
-Fill in the Personal Info Form and Submit (Next Step)
-Go to Select Your Plan page and Select a plan
-Can go back to the Previous page or Submit(Confirm)
-Go to Pick Add Ons and Pick Add Ons and Submit
 
 
 
@@ -72,10 +71,9 @@ This is still a work in progress project.
 
 This is what I am working on to complete this project:
 
-1.Complete Step 4 (Finishing Up)
-2.Style with CSS
-3.Work on User Functionality where the user is able to:Form Validation
-4.Integrate API
+1.Desktop Design
+2.View of the interface depending on the device's screen size.
+3.Form validation
 
 
 ### Useful resources
